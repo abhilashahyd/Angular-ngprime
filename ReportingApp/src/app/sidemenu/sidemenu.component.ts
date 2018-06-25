@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { MenuModule } from 'primeng/menu';
+import { MenuModule } from 'primeng/menu';
 import { MenuItem }  from 'primeng/api';
 
 @Component({
@@ -16,7 +16,18 @@ export class SidemenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  this.items =[{label:'Employee'},{label:'Utilization'}];
+  this.items =[
+    {
+               label: 'Dashboard',
+               // icon: 'fa fa-fw fa-file-o',
+               items: [{
+                       label: 'Employee',
+                       // icon: 'fa fa-fw fa-plus',
+                   },
+                   {label: 'Utilization'},
+                   {label: 'Logout'}
+               ]
+           }];
   }
 
 }
